@@ -5,11 +5,14 @@ import RootLayout from "./layouts/RootLayout";
 import Home from "./components/Home";
 import UserList from "./components/UserList";
 import './index.css';
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 const root = document.getElementById("root") as HTMLElement;
 
 ReactDOM.createRoot(root).render(
-  <BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
     <Routes>
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
@@ -17,4 +20,5 @@ ReactDOM.createRoot(root).render(
       </Route>
     </Routes>
   </BrowserRouter>
+  </Provider>
 );
