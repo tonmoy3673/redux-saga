@@ -1,11 +1,5 @@
-import React from 'react';
-
 const UserList = () => {
-    return (
-        <div>
-            UserList
-        </div>
-    );
+  return <div className="text-center">UserList</div>;
 };
 
 export default UserList;
