@@ -23,7 +23,7 @@ export interface Users {
 }
 
 export interface UsersState {
-    name : string;
+  name: string;
   loading: boolean;
   data: Users[];
   error: string | null;

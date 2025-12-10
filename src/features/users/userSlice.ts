@@ -1,8 +1,8 @@
 import type { Users, UsersState } from "./userTypes";
 
 export const GET_USERS_REQUEST = "GET_USERS_REQUEST";
-export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS" ;
-export const GET_USERS_FAILURE = "GET_USERS_FAILURE"; 
+export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS";
+export const GET_USERS_FAILURE = "GET_USERS_FAILURE";
 
 // Action Types
 export type GetUsersRequestAction = {
@@ -19,13 +19,10 @@ export type GetUsersFailureAction = {
   payload: string | null;
 };
 
-
-
-
-
-
-export type UsersAction = GetUsersRequestAction | GetUsersSuccessAction | GetUsersFailureAction;
-
+export type UsersAction =
+  | GetUsersRequestAction
+  | GetUsersSuccessAction
+  | GetUsersFailureAction;
 
 const initialState: UsersState = {
   name: "Users",
@@ -54,12 +51,16 @@ export const userReducer = (
 };
 
 //================== Action Creator =================//
-export const getUserRequest = (): GetUsersRequestAction  => ({ type: GET_USERS_REQUEST });
-export const getUserSuccess = (data: Users[]) : GetUsersSuccessAction => ({
+export const getUserRequest = (): GetUsersRequestAction => ({
+  type: GET_USERS_REQUEST,
+});
+export const getUserSuccess = (data: Users[]): GetUsersSuccessAction => ({
   type: GET_USERS_SUCCESS,
   payload: data,
 });
-export const getUserFailure = (error: null | string) : GetUsersFailureAction => ({
+export const getUserFailure = (
+  error: null | string
+): GetUsersFailureAction => ({
   type: GET_USERS_FAILURE,
   payload: error,
 });

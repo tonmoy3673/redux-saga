@@ -7,11 +7,11 @@ import { getUserRequest } from "../features/users/userSlice";
 const UserList = () => {
   const dispatch = useDispatch<AppDispatch>();
 
-//   ============== call function ===========//
-useEffect(()=>{
-    dispatch(getUserRequest())
-},[dispatch])
- 
+  //   ============== call function ===========//
+  useEffect(() => {
+    dispatch(getUserRequest());
+  }, [dispatch]);
+
   const { data, error, loading } = useSelector(
     (state: RootState) => state.users
   );
